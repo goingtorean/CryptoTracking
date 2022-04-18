@@ -33,13 +33,12 @@ const WatchlistProvider = ({ children }) => {
   };
 
   const removeWatchlistCoinId = async (coinId) => {
-    console.log("xcxcx", coinId);
-    // const newWatchlist = watchlistCoinIds.filter(
-    //   (coinIdValue) => coinIdValue !== coinId
-    // );
-    // const jsonValue = JSON.stringify(newWatchlist);
-    // await AsyncStorage.setItem("@watchlist_coins", jsonValue);
-    // setWatchlistCoinIds(newWatchlist);
+    const newWatchlist = watchlistCoinIds.filter(
+      (coinIdValue) => coinIdValue !== coinId
+    );
+    const jsonValue = JSON.stringify(newWatchlist);
+    await AsyncStorage.setItem("@watchlist_coins", jsonValue);
+    setWatchlistCoinIds(newWatchlist);
   };
 
   return (
